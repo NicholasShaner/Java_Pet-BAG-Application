@@ -1,6 +1,6 @@
 package projectTwo;
 
-//RescueAnimal.java
+//Dog.java
 
 /********************
 * IT-145 7-2 Project Two
@@ -14,115 +14,60 @@ package projectTwo;
 * 
 * ******************/
 
-import java.lang.String;
+/*
+ * declared Dog class and extension of RescueAnimal class to
+ * inherit methods and objects
+ */
+public class Dog extends RescueAnimal {
 
-public class RescueAnimal {
-
-    /*
-     * Instance variables of RescueAnimal class
-     */
-    private String name;
-    private String animalType;
-    private String gender;
-    private String age;
-    private String weight;
-    private String acquisitionDate;
-    private String acquisitionCountry;
-    private String trainingStatus;
-    private Boolean reserved;
-    private String inServiceCountry;
-
+    
+	/*
+	 * Instance variable breed, specific to Dog class
+	 */
+    private String breed;
 
     /*
-     * Constructor for RescueAnimal class
+     * Constructor
      */
-    public RescueAnimal() {
+    public Dog(String name, String breed, String gender, String age,
+    String weight, String acquisitionDate, String acquisitionCountry,
+	String trainingStatus, boolean reserved, String inServiceCountry) {
+        this.setName(name);
+        this.setBreed(breed);
+        this.setGender(gender);
+        this.setAge(age);
+        this.setWeight(weight);
+        this.setAcquisitionDate(acquisitionDate);
+        this.setAcquisitionLocation(acquisitionCountry);
+        this.setTrainingStatus(trainingStatus);
+        this.setReserved(reserved);
+        this.setInServiceCountry(inServiceCountry);
+
     }
 
     /*
-     * Accessors for RescueAnimal class
+     * Mutator Method for Dog class
      */
-	public String getName() {
-		return name;
-	}
-	
-	public String getAnimalType() {
-		return animalType;
-	}
-	
-	public String getGender() {
-		return gender;
-	}	
-	
-	public String getAge() {
-		return age;
-	}
-	
-	public String getWeight() {
-		return weight;
-	}	
-	
-	public String getAcquisitionDate() {
-		return acquisitionDate;
-	}
-	
-	public String getAcquisitionLocation() {
-		return acquisitionCountry;
-	}
-	
-	public boolean getReserved() {
-		return reserved;
-	}
-	
-	public String getInServiceLocation() {
-		return inServiceCountry;
-	}
-	
-	public String getTrainingStatus() {
-		return trainingStatus;
-	}
-	
+    public void setBreed(String dogBreed) {
+        this.breed = dogBreed;
+    }
+    /*
+     * Accessor Method for Dog class
+     */
+    public String getBreed() {
+        return breed;
+    }
+    
+    /*
+     * override toString method for printing dog element
+     */
+    @Override
+    public String toString() {
+    	return ("Name: " + getName() + ", Breed: " + getBreed() + ", Gender: " + getGender() + ", Age: " + getAge() + ", Weight: " + 
+    getWeight() + ", Date Aquired: " + getAcquisitionDate() + ", Country Aquired From: " + getAcquisitionLocation() + 
+    ", Training Status: " + getTrainingStatus() + ", Reserved? " + getReserved() + ", In Service: " + getInServiceLocation());
+    }
 
-	/*
-	 * Mutator methods for RescueAnimal class
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
 
-	public void setAnimalType(String animalType) {
-		this.animalType = animalType;
-	}
-	
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
 
-	public void setAge(String age) {
-		this.age = age;
-	}
-
-	public void setWeight(String weight) {
-		this.weight = weight;
-	}
-
-	public void setAcquisitionDate(String acquisitionDate) {
-		this.acquisitionDate = acquisitionDate;
-	}
-
-	public void setAcquisitionLocation(String acquisitionCountry) {
-		this.acquisitionCountry = acquisitionCountry;
-	}
-
-	public void setReserved(boolean reserved) {
-		this.reserved = reserved;
-	}
-
-	public void setInServiceCountry(String inServiceCountry) {
-		this.inServiceCountry = inServiceCountry;
-	}
-
-	public void setTrainingStatus(String trainingStatus) {
-		this.trainingStatus = trainingStatus;
-	}
 }
